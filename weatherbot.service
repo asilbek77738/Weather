@@ -1,0 +1,17 @@
+[Unit]
+Description=Test weather bot
+After=syslog.target
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=2s
+Type=simple
+User=root
+Group=root
+MemoryLimit=4G
+WorkingDirectory=/root/obhavo
+ExecStart=/root/obhavo/venv/bin/python /root/obhavo/app.py
+
+[Install]
+WantedBy=multi-user.target
